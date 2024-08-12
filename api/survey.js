@@ -1,7 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const https = require('https');
 const app = express();
 
+const corsOptions = {
+    origin: 'https://socketio-client-ten.vercel.app', // 許可するオリジンを指定
+    optionsSuccessStatus: 200 // 一部の古いブラウザ向けの設定
+};
+app.use(cors(corsOptions));
 
 const server = https.createServer(app);
 const { Server } = require('socket.io');
