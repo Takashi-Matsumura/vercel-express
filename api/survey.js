@@ -7,7 +7,7 @@ const server = https.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 
-const PORT = 5000;
+const PORT = 443;
 const surveys = {
     survey0: {
         id: 0,
